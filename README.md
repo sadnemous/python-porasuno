@@ -1,5 +1,6 @@
 ## python-porasuno
 ### 1. Setup Virtual Environment:
+(MY-INP)
 ```bash
 cat>init
 #create virtual env
@@ -14,7 +15,7 @@ CTRL+C
 # if you have requirement.txt run following command
 pip install -r requirement.txt
 ```
-
+(MY-INP)
 Once you are done, you may consider deactivating the environment by running `deactivate` command.
 `deactivate` is a function which gets sourced into the environment during activating virtual environment.
 To see the function detail run this command before deactivating the virtual environment:
@@ -59,7 +60,7 @@ That is the "requirements format".
 
 Here, `django==1.4.2` implies install `django` version 1.4.2 (even though the latest is 1.6.x). <br>
 If you do not specify ==1.4.2, the latest version available would be installed.
-#### Final thought (my input)
+#### Final thought (MY-INP)
  - if I know which lib I need I can include in requirement.txt
  - once I am done with my work, I can run `pip freeze > requirement.txt` and share my work along with requirement.txt
 
@@ -105,6 +106,30 @@ import pandas as pd
 df = pd.read_sql_query("SELECT * FROM your_table_name", mydb)
 print(df)
 ```
+
+
+#### Complete Code of my try-out (MY-INP)
+my requirement.txt
+```
+mysql-connector-python==9.1.0
+numpy==2.2.1
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.17.0
+tzdata==2024.2
+```
+
+read_mysql.py
+```python
+```
+
+
+output
+```
+```
+
+
 
 
 
