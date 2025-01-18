@@ -122,11 +122,75 @@ tzdata==2024.2
 
 read_mysql.py
 ```python
+#!/usr/bin/env python3
+import mysql.connector
+import pandas as pd
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="soumen",
+  password="das",
+  database="mydb"
+)
+
+mycursor = mydb.cursor()
+mycursor.execute("SELECT * FROM myInfo")
+myresult = mycursor.fetchall()
+for x in myresult:
+  print(x)
+
+mydb.close()
 ```
 
 
 output
 ```
+(1, 'HUAJIN', 'QIN')
+(2, 'MARTHA', 'LEBDO')
+(3, 'GARCIA', 'LUKE')
+(4, 'RAINA', 'SAMAY')
+(5, 'DIA', 'MIRZA')
+```
+
+#### collecting in dataframe and display
+`$cat read_mysql_to_pd.py`
+```python
+#!/usr/bin/env python3
+import pandas as pd
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="soumen",
+  password="das",
+  database="mydb"
+)
+
+mycursor = mydb.cursor()
+# Execute a query
+query = "SELECT * FROM myInfo"
+mycursor.execute(query)
+
+# Fetch all results
+results = mycursor.fetchall()
+
+# Create a DataFrame
+df = pd.DataFrame(results, columns=mycursor.column_names)
+
+# Close the connection
+mydb.close()
+
+print(df)
+```
+
+Output:
+```
+   ID FirstName LastName
+0   1    HUAJIN      QIN
+1   2    MARTHA    LEBDO
+2   3    GARCIA     LUKE
+3   4     RAINA    SAMAY
+4   5       DIA    MIRZA
 ```
 
 
