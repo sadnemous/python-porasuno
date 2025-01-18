@@ -97,6 +97,17 @@ mydb.close()
 ```
 
 
+<b>Alternative method using pandas:</b><br>
+If you want to work with the data in a pandas DataFrame, you can use the `read_sql_query()` function:
+```python
+import pandas as pd
+
+df = pd.read_sql_query("SELECT * FROM your_table_name", mydb)
+print(df)
+```
+
+
+
 
 
 
