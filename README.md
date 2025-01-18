@@ -1,5 +1,26 @@
 ## python-porasuno
-### Why does pip list generate a more comprehensive list than pip freeze? 
+### 1. Setup Virtual Environment:
+```bash
+cat>init
+#create virtual env
+if [ ! -d $PWD/venv ]; then
+  mkdir $PWD/venv
+fi
+
+python3 -m venv $PWD/venv
+. $PWD/venv/bin/activate
+CTRL+C
+. ./init
+# if you have requirement.txt run following command
+pip install -r requirement.txt
+```
+
+Once you are done, you may consider deactivating the environment by running `deactivate` command.
+`deactivate` is a function which gets sourced into the environment during activating virtual environment.
+To see the function detail run this command before deactivating the virtual environment:
+`type deactivate`
+
+### 2. Why does pip list generate a more comprehensive list than pip freeze? 
 [Knowledge Source](https://stackoverflow.com/questions/18966564/pip-freeze-vs-pip-list)
 ```bash
 $ pip list
@@ -38,6 +59,9 @@ That is the "requirements format".
 
 Here, `django==1.4.2` implies install `django` version 1.4.2 (even though the latest is 1.6.x). <br>
 If you do not specify ==1.4.2, the latest version available would be installed.
+#### Final thought (my input)
+ - if I know which lib I need I can include in requirement.txt
+ - once I am done with my work, I can run `pip freeze > requirement.txt` and share my work along with requirement.txt
 
-You can read more in "Virtualenv and pip Basics", and the official "Requirements File Format" documentation.
 
+### 2. connecting to mysql
