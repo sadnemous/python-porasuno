@@ -1,5 +1,6 @@
 ## python-porasuno
-### Why does pip list generate a more comprehensive list than pip freeze? [source:https://stackoverflow.com/questions/18966564/pip-freeze-vs-pip-list]
+### Why does pip list generate a more comprehensive list than pip freeze? 
+[Knowledge Source](https://stackoverflow.com/questions/18966564/pip-freeze-vs-pip-list)
 ```bash
 $ pip list
 feedparser (5.1.3)
