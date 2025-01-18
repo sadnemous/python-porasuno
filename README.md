@@ -12,7 +12,7 @@ wsgiref==0.1.2
 ```
 Pip's documentation states:
 
-|||
+|pip <option>|Description|
 |---|---|
 |freeze|Output installed packages in requirements format.|
 |list|List installed packages.|
