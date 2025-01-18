@@ -64,4 +64,40 @@ If you do not specify ==1.4.2, the latest version available would be installed.
  - once I am done with my work, I can run `pip freeze > requirement.txt` and share my work along with requirement.txt
 
 
-### 2. connecting to mysql
+### 3. connecting to mysql
+To read a table from MySQL in Python, you can use the following steps:
+1. Install the necessary library:
+   `pip install mysql-connector-python`
+2. Connect to the database:
+```python
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="your_database_host",
+  user="your_username",
+  password="your_password",
+  database="your_database_name"
+)
+
+mycursor = mydb.cursor()
+```
+3. Execute a query:
+ ```python
+   mycursor.execute("SELECT * FROM your_table_name")
+   ```
+4. Fetch the results:
+```python
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+5. Close the connection:
+```python
+mydb.close()
+```
+
+
+
+
+
+
